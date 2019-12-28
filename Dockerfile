@@ -19,6 +19,8 @@ RUN apk add --no-cache py-libvirt
 RUN apk add --no-cache py-libxml2
 RUN apk add --no-cache virt-install
 RUN apk add --no-cache openrc
+RUN apk add --no-cache nano
+RUN apk add --no-cache curl
 
 RUN cd /usr/bin && \
     ln -sf python3 python \
@@ -33,7 +35,8 @@ RUN rm -rf /root/.cache/*
 
 RUN mkdir -p /run/openrc
 RUN touch /run/openrc/softlevel
-RUN rc-update add libvirtd
+# RUN modprobe tun
+# RUN rc-update add libvirtd
 
 COPY archangel/src /x/src
 COPY archangel/qemu /x/qemu
