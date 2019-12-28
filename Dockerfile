@@ -18,6 +18,7 @@ RUN apk add --no-cache libvirt-daemon
 RUN apk add --no-cache py-libvirt
 RUN apk add --no-cache py-libxml2
 RUN apk add --no-cache virt-install
+RUN apk add --no-cache openrc
 
 RUN cd /usr/bin && \
     ln -sf python3 python \
