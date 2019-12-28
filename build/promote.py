@@ -114,6 +114,7 @@ class Promote(object):
     def start_container(self, server, client, volume=str("")):
         cmd = ("docker run --name {} ".format(self.container_name) +
                "--network host " +
+               "--privileged " +
                "-td {}".format(self.image))
         (stdin, stdout, stderr) = client.exec_command(cmd)
         for line in stdout:

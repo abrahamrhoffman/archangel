@@ -31,6 +31,8 @@ RUN pip install --no-binary :all: falcon
 RUN rm -rf /var/cache/*
 RUN rm -rf /root/.cache/*
 
+RUN mkdir -p /run/openrc
+RUN touch /run/openrc/softlevel
 RUN rc-update add libvirtd
 
 COPY archangel/src /x/src
