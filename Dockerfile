@@ -32,7 +32,6 @@ RUN rm -rf /var/cache/*
 RUN rm -rf /root/.cache/*
 
 RUN rc-update add libvirtd
-RUN rc-service libvirtd start
 
 COPY archangel/src /x/src
 COPY archangel/qemu /x/qemu
